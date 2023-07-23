@@ -151,12 +151,12 @@ var
   userChoice:TModalResult;
   i:Integer;
 begin
-    userChoice := MessageDlg('Are you sure you want to save to wipe.ini?', mtConfirmation, [mbYes, mbNo], 0);
+    userChoice := MessageDlg('Are you sure you want to save to KFCacheManager.ini?', mtConfirmation, [mbYes, mbNo], 0);
 
   if userChoice <> mrYes then
     Exit;
 
-  Log('overwriting wipe.ini');
+  Log('overwriting KFCacheManager.ini');
 
   INI_WipeIni.EraseSection('Wipe');
 
@@ -194,7 +194,7 @@ begin
     for j:= 0 to Keys.Count - 1 do begin
       if INI_CacheIni.ReadString('Cache',Keys[j],'') = ListBoxWipeList.Items[i] then begin
 
-        Log('Deleting: ' + INI_CacheIni.ReadString('Cache',Keys[j],'---');
+        Log('Deleting: ' + INI_CacheIni.ReadString('Cache',Keys[j],'---') + ' | ' + keys[j] + '.uxx');
         INI_CacheIni.DeleteKey('Cache',Keys[j]);
         DeleteFile(WorkingDir + '\Cache\' + Keys[j] + '.uxx');
       end;
@@ -227,7 +227,7 @@ procedure TForm1.ButtonReInitClick(Sender: TObject);
 var userChoice:TModalResult;
 begin
   userChoice := MessageDlg('Are you sure you want to Re-Init?' + LineEnding +
-                           'This will also clear the Wipelist.', mtConfirmation, [mbYes, mbNo], 0);
+                           'This will also clear the any changes in the Wipelist.', mtConfirmation, [mbYes, mbNo], 0);
 
   if userChoice <> mrYes then
     Exit;
@@ -245,7 +245,7 @@ begin
 
   if Assigned (INI_WipeIni) then begin
     INI_WipeIni.Free;
-    Log('freed wipe.ini object');
+    Log('freed KFCacheManger.ini object');
   end;
 
   Log('running re-init');
@@ -323,11 +323,11 @@ var
   i:Integer;
 begin
   //if not Assigned(INI_WipeIni) then begin
-  //  ShowMessage('ERROR: wipe.ini was found but is also already assigned? Exiting.');
+  //  ShowMessage('ERROR: KFCacheManger.ini was found but is also already assigned? Exiting.');
   //  Halt;
   //end;
 
-  INI_WipeIni:=TIniFile.Create(WorkingDir + '\wipe.ini');
+  INI_WipeIni:=TIniFile.Create(WorkingDir + '\KFCacheManager.ini');
 
   sectionValues:=TStringList.Create;
 
@@ -377,11 +377,11 @@ begin
   ReadCacheIni();
 
 
-  Log('finding wipe.ini');
-  if not FileExists(WorkingDir + '\wipe.ini') then
+  Log('finding KFCacheManager.ini');
+  if not FileExists(WorkingDir + '\KFCacheManager.ini') then
   begin
-    Log('wipe.ini not foud. creating...');
-    INI_WipeIni:=TIniFile.Create(WorkingDir + '\wipe.ini');
+    Log('KFCacheManager.ini not foud. creating...');
+    INI_WipeIni:=TIniFile.Create(WorkingDir + '\KFCacheManager.ini');
   end
   else
   begin
