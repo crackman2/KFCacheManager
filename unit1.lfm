@@ -1,0 +1,186 @@
+object Form1: TForm1
+  Left = 467
+  Height = 551
+  Top = 50
+  Width = 522
+  Caption = 'Killing Floor: Cache Manager'
+  ClientHeight = 551
+  ClientWidth = 522
+  OnCreate = FormCreate
+  LCLVersion = '2.0.6.0'
+  object ListBoxCurrent: TListBox
+    Left = 8
+    Height = 304
+    Top = 24
+    Width = 250
+    ItemHeight = 0
+    MultiSelect = True
+    TabOrder = 0
+  end
+  object ListBoxWipeList: TListBox
+    Left = 264
+    Height = 304
+    Top = 24
+    Width = 250
+    ItemHeight = 0
+    MultiSelect = True
+    TabOrder = 1
+  end
+  object ButtonClear: TButton
+    Left = 394
+    Height = 30
+    Top = 336
+    Width = 120
+    Caption = 'Clear List'
+    OnClick = ButtonClearClick
+    TabOrder = 2
+  end
+  object ButtonRemoveSelected: TButton
+    Left = 264
+    Height = 30
+    Top = 336
+    Width = 120
+    Caption = 'Remove Selected'
+    OnClick = ButtonRemoveSelectedClick
+    TabOrder = 3
+  end
+  object ButtonAddSelected: TButton
+    Left = 8
+    Height = 30
+    Top = 336
+    Width = 120
+    Caption = 'Add Selected'
+    OnClick = ButtonAddSelectedClick
+    TabOrder = 4
+  end
+  object ButtonCleanCache: TButton
+    Left = 8
+    Height = 30
+    Top = 376
+    Width = 250
+    Caption = 'Clean Cache'
+    OnClick = ButtonCleanCacheClick
+    TabOrder = 5
+  end
+  object ButtonSave: TButton
+    Left = 264
+    Height = 30
+    Top = 376
+    Width = 250
+    Caption = 'Save'
+    OnClick = ButtonSaveClick
+    TabOrder = 6
+  end
+  object ButtonReInit: TButton
+    Left = 138
+    Height = 30
+    Top = 336
+    Width = 120
+    Caption = 'Re-Init'
+    OnClick = ButtonReInitClick
+    TabOrder = 7
+  end
+  object Label1: TLabel
+    Left = 10
+    Height = 15
+    Top = 4
+    Width = 85
+    Caption = 'Cache contents:'
+    ParentColor = False
+  end
+  object Label2: TLabel
+    Left = 264
+    Height = 15
+    Top = 4
+    Width = 45
+    Caption = 'Wipelist:'
+    ParentColor = False
+  end
+  object ListBoxLog: TListBox
+    Left = 96
+    Height = 120
+    Top = 424
+    Width = 416
+    ItemHeight = 0
+    TabOrder = 8
+  end
+  object Label3: TLabel
+    Left = 96
+    Height = 15
+    Top = 408
+    Width = 23
+    Caption = 'Log:'
+    ParentColor = False
+  end
+  object ButtonSelect_U: TButton
+    Left = 8
+    Height = 24
+    Top = 426
+    Width = 40
+    Caption = '.u'
+    OnClick = ButtonSelect_UClick
+    TabOrder = 9
+  end
+  object ButtonSelect_UAX: TButton
+    Left = 50
+    Height = 24
+    Top = 426
+    Width = 40
+    Caption = '.uax'
+    OnClick = ButtonSelect_UAXClick
+    TabOrder = 10
+  end
+  object ButtonSelect_USX: TButton
+    Left = 8
+    Height = 24
+    Top = 456
+    Width = 40
+    Caption = '.usx'
+    OnClick = ButtonSelect_USXClick
+    TabOrder = 11
+  end
+  object ButtonSelect_UKX: TButton
+    Left = 50
+    Height = 24
+    Top = 456
+    Width = 40
+    Caption = '.ukx'
+    OnClick = ButtonSelect_UKXClick
+    TabOrder = 12
+  end
+  object ButtonSelect_UTX: TButton
+    Left = 8
+    Height = 24
+    Top = 488
+    Width = 40
+    Caption = '.utx'
+    OnClick = ButtonSelect_UTXClick
+    TabOrder = 13
+  end
+  object Label4: TLabel
+    Left = 10
+    Height = 15
+    Top = 408
+    Width = 49
+    Caption = 'Select all:'
+    ParentColor = False
+  end
+  object ButtonSelect_ROM: TButton
+    Left = 50
+    Height = 24
+    Top = 488
+    Width = 40
+    Caption = '.rom'
+    OnClick = ButtonSelect_ROMClick
+    TabOrder = 14
+  end
+  object ButtonDeselect: TButton
+    Left = 8
+    Height = 24
+    Top = 520
+    Width = 80
+    Caption = 'Deselect'
+    OnClick = ButtonDeselectClick
+    TabOrder = 15
+  end
+end
